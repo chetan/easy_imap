@@ -4,6 +4,9 @@ require 'time'
 
 module EasyIMAP
   class Message
+
+    attr_reader :uid
+
     def initialize(conn, uid)
       @conn = conn
       @uid = uid
