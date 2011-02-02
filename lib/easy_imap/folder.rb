@@ -39,6 +39,11 @@ module EasyIMAP
       read_write()
       uid = (msg.kind_of?(EasyIMAP::Message) ? msg.uid : msg)
       @conn.uid_store(uid, '+FLAGS', [:Deleted])
+      expunge()
+    end
+
+    def expunge
+      @conn.expunge()
     end
 
     def read_only
