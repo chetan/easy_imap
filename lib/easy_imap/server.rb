@@ -3,6 +3,9 @@ require 'net/imap'
 module EasyIMAP
   # A connection to an IMAP server.
   class Server
+
+    attr_reader :conn
+
     # Makes a connection to +host+ and returns an instance of Server.
     #
     # It is recommended that you use this method to connect instead
